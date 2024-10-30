@@ -1,0 +1,172 @@
+/**
+ * Import variables
+ */
+@import "variables";
+
+/**
+   * Import npm dependencies
+   */
+@import "npm:@fortawesome/fontawesome-free/css/all.css";
+
+/* Estilos globales */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: $font-family-sans-serif;
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $background-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Layouts */
+.uoc-container {
+  max-width: $container-max-width;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/* Cabecera y menú */
+.header {
+  padding: 20px 0;
+  background-color: $primary-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &__nav {
+    &-menu {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+
+      &-item {
+        margin: 0 15px;
+
+        &-link {
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: $secondary-color;
+          text-decoration: none;
+
+          &:hover {
+            color: $accent-color;
+            transition: color 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Sección Hero */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  color: $secondary-color;
+  text-align: center;
+  background-image: url("../images/garganta-hero.jpg");
+  background-position: center;
+  background-size: cover;
+
+  &__content {
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+
+    &-title {
+      font-family: $font-family-serif;
+      font-size: 3rem;
+    }
+
+    &-description {
+      margin-top: 15px;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+/* Secciones */
+.section {
+  padding: $section-padding;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 20px;
+    font-family: $font-family-serif;
+    color: $primary-color;
+  }
+
+  &__text {
+    max-width: 1500px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: $text-color;
+    text-align: center;
+  }
+}
+
+/* Galería */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+
+  &__image {
+    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Footer */
+.footer {
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: $secondary-color;
+  text-align: center;
+  background-color: $primary-color;
+}
+
+/* Responsive */
+@media (max-width: $mq-tablet) {
+  .header__nav-menu {
+    flex-direction: column;
+
+    .header__nav-menu-item {
+      margin: 10px 0;
+    }
+  }
+
+  .hero__content-title {
+    font-size: 2.5rem;
+  }
+
+  .gallery__image {
+    width: 45%;
+  }
+}
+
+@media (max-width: $mq-min-width) {
+  .hero__content-title {
+    font-size: 2rem;
+  }
+
+  .gallery__image {
+    width: 100%;
+  }
+}
